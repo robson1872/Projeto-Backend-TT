@@ -11,4 +11,3 @@ assunto.
 • Perguntas: é autoexplicativo, são as perguntas de um formulário.
 • Respostas: são as respostas das perguntas.
 
-* ...
