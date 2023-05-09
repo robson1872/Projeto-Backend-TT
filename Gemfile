@@ -51,4 +51,7 @@ group :development, :test do
   gem "paranoia", "~> 2.2"
   gem 'cpf_cnpj'
   gem 'jwt'
+  gem 'faker'
 end
+
+gem "factory_bot", "~> 6.2"

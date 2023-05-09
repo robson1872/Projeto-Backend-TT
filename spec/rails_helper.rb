@@ -66,5 +66,11 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+  config.include FactoryBot::Syntax::Methods
+  config.include Rails.application.routes.url_helpers
+  config.include ActiveSupport::Testing::TimeHelpers
+  config.before(:suite) do
+    FactoryBot.reload
+  end
 end
 

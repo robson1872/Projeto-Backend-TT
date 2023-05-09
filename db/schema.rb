@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_09_014342) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_09_082521) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,8 +21,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_09_014342) do
     t.datetime "updated_at", null: false
     t.bigint "formulary_id"
     t.datetime "deleted_at"
+    t.bigint "question_id"
     t.index ["deleted_at"], name: "index_answers_on_deleted_at"
     t.index ["formulary_id"], name: "index_answers_on_formulary_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "formularies", force: :cascade do |t|
@@ -40,7 +42,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_09_014342) do
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
     t.string "content"
+    t.bigint "formulary_id"
     t.index ["deleted_at"], name: "index_questions_on_deleted_at"
+    t.index ["formulary_id"], name: "index_questions_on_formulary_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,5 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_09_014342) do
   end
 
   add_foreign_key "answers", "formularies"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "formularies"
   add_foreign_key "visits", "users"
 end

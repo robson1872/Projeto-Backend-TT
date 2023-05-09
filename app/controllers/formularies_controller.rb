@@ -46,6 +46,6 @@ class FormulariesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def formulary_params
-      params.permit(:name)
+      params.require(:formulary).permit(:name)
     end
 end
