@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  question: one
+  answered_at: 2023-05-06 23:59:08
+
+two:
+  content: MyText
+  question: two
+  answered_at: 2023-05-06 23:59:08
