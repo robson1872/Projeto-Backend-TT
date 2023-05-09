@@ -17,23 +17,23 @@ assunto.
 • Respostas: são as respostas das perguntas.
 
 
-#General Problems
+<h2>General Problems<h2>
 
 O projeto contém toda a implementação dos models e seus respectivos controllers, que garantem todos o métodos métodos index, create, update e delete.
 
-#SOFT DELETE
+<h2>SOFT DELETE<h2>
 
 O projeto possui SOFT DELETE em todos os models, sendo usado Paranoia.
 
-#Validations
+<h2>Validations<h2>
 
 O projeto dispõe de validações para os modelos apresentados.
 
-#JWT
+<h2>JWT<h2>
 
 O projeto aprensenta autenticação por token ao usuário.
 
-#Spec/requests
+<h2>Spec/requests<h2>
 
 O projeto apresenta testes feitos com Rspec, sendo os que testam os requests:
 
