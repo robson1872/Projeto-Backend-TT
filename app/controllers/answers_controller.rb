@@ -3,19 +3,19 @@ class AnswersController < ApplicationController
   before_action :load_question
   before_action :load_answer, only: %i[ show update destroy ]
 
-  # GET /answers
+
   def index
     @answers = @question.answers
 
     render json: @answers
   end
 
-  # GET /answers/1
+
   def show
     render json: @answer
   end
 
-  # POST /answers
+
   def create
     @answer = @question.answers.new(answer_params)
 
@@ -26,7 +26,6 @@ class AnswersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /answers/1
   def update
     if @answer.update(answer_params)
       render json: @answer
@@ -35,13 +34,13 @@ class AnswersController < ApplicationController
     end
   end
 
-  # DELETE /answers/1
+
   def destroy
     @answer.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def load_answer
       @answer = @question.answers.find(params[:id])
     end
@@ -54,7 +53,7 @@ class AnswersController < ApplicationController
       @formulary = Formulary.find(params[:formulary_id])
     end
 
-    # Only allow a list of trusted parameters through.
+
     def answer_params
       params.require(:answer).permit(:content, :answered_at, :formulary_id)
     end
